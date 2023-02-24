@@ -1,0 +1,516 @@
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: var(--secondary-clr);
+}
+
+:root {
+    --main-clr: #fc5d35;
+    --secondary-clr: #111;
+    --bg-clr: #fff;
+    --landing-bg-clr: #f7f7f7;
+    --main-transition: 0.5s;
+    --section-padding: 100px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/* Start Header */
+
+header {
+    background-color: var(--landing-bg-clr);
+    max-height: 70px;
+}
+
+#menu {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+#menu ion-icon {
+    transition: var(--main-transition);
+}
+
+#menu:hover ion-icon {
+    color: var(--main-clr);
+}
+
+header .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: nowrap row;
+    gap: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+header .container .logo h2 {
+    color: var(--secondary-clr);
+    transition: var(--main-transition);
+}
+
+header .container .logo:hover h2 {
+    color: var(--main-clr);
+}
+
+header .container .logo img {
+    width: 45px;
+}
+
+header .container .links {
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap row;
+    gap: 15px;
+    justify-content: space-between;
+    flex-basis: 60%;
+    position: relative;
+    transition: var(--main-transition);
+}
+
+header .container .links li {
+    padding: 20px 10px;
+    display: block;
+    text-transform: capitalize;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+header .container .links li:last-child {
+    padding: 20px 0;
+}
+
+header .container .links li a {
+    position: relative;
+    transition: var(--main-transition);
+}
+
+header .container .links li:hover a {
+    color: var(--main-clr);
+}
+
+header .container .links li:not(:last-child):before,
+header .container .links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    background-color: var(--main-clr);
+    width: 100%;
+    height: 1px;
+    transition: var(--main-transition);
+}
+
+header .container .links li:not(:last-child):before {
+    left: -500px;
+    bottom: 0;
+}
+
+header .container .links li:not(:last-child)::after {
+    right: -500px;
+    top: 0;
+}
+
+header .container .links li:not(:last-child):hover:before {
+    left: 0;
+}
+
+header .container .links li:not(:last-child):hover::after {
+    right: 0;
+}
+
+header .container .links li ion-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
+    transition: var(--main-transition);
+}
+
+header .container .links li:hover ion-icon {
+    color: var(--main-clr);
+}
+
+header .container .links li>button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+}
+
+
+
+/* Start Landing */
+
+.landing {
+    padding: 0;
+    min-height: calc(100vh - 70px);
+    background-color: var(--landing-bg-clr);
+}
+
+.landing .container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10%;
+    min-height: calc(100% - 130px);
+}
+
+.landing .container .landing-content {
+    flex-basis: 50%;
+}
+
+.landing .container .landing-content h1 {
+    font-size: 3.9em;
+    font-weight: 700;
+    line-height: 1.18;
+}
+
+.landing .container .landing-content h1>span {
+    color: var(--main-clr);
+}
+
+.landing .container .landing-content p {
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin: 30px 0;
+}
+
+.landing .container .landing-content button {
+    margin: 10px 0 10px 20px;
+}
+
+.landing .container .image {
+    flex-basis: 40%;
+}
+
+.landing .container .image img {
+    width: 100%;
+}
+
+.landing .previous {
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landing .next {
+    right: 40px;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+
+/* Start Services */
+
+.services .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.services .service-card {
+    border: 1px solid var(--landing-bg-clr);
+    position: relative;
+    box-shadow:
+        inset 0px 3px 10px #0000001c,
+        0px 10px 10px #91919138;
+    height: 350px;
+    padding: 20px;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.8;
+    overflow: hidden;
+}
+
+.services .service-card::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 0;
+    top: -100%;
+    background-color: var(--main-clr);
+    transition: var(--main-transition);
+}
+
+.services .service-card:hover:before {
+    top: 0;
+}
+
+.services .service-card::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    right: 0;
+    top: 100%;
+    background-color: var(--main-clr);
+    transition: var(--main-transition);
+}
+
+.services .service-card:hover::after {
+    top: 0;
+}
+
+.services .service-card .item {
+    margin-top: 30px;
+}
+
+.services .service-card .item img {
+    width: 50px;
+}
+
+.services .service-card .item .title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--main-clr);
+    margin: 0;
+}
+
+/* Start Fruits */
+.fruits {
+    background-color: var(--landing-bg-clr);
+}
+
+.fruits .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.fruits .fruit {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.fruit .about-fruit {
+    line-height: 2;
+    flex-basis: 70%;
+}
+
+.fruit .about-fruit .title {
+    font-size: 1.8rem;
+    word-spacing: 2px;
+    font-weight: 500;
+}
+
+.fruit .about-fruit p {
+    margin-bottom: 30px;
+}
+
+.fruit .fruit-image {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.fruit .fruit-image img {
+    width: 250px;
+}
+
+/* Start Tasty Section */
+.tasty {
+    text-align: center;
+    background-image: url(../images/tasty-image.png);
+    object-fit: cover;
+    background-size: cover;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--bg-clr);
+    font-size: 4rem;
+}
+
+.tasty>h1 {
+    color: var(--bg-clr);
+}
+
+/* Start Testimonial */
+.testimonial {
+    position: relative;
+}
+
+.testimonial .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.testimonial .previous {
+    bottom: 0;
+    left: calc(50% - 50px);
+}
+
+.testimonial .next {
+    bottom: 0;
+    right: calc(50% - 50px);
+}
+
+/* Start Contact Us */
+
+.contact-us .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.contact-us .container form {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    flex-basis: 60%;
+}
+
+.contact-us .container form h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.contact-us .container form button {
+    align-self: flex-start;
+    margin-top: 50px;
+}
+
+.contact-us input,
+.contact-us textarea {
+    padding: 15px 0 5px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--secondary-clr);
+    resize: vertical;
+}
+
+.contact-us img {
+    position: absolute;
+    right: 0;
+    top: 120px;
+    width: 200px;
+}
+
+/* Start Footer */
+footer {
+    background-color: var(--landing-bg-clr);
+}
+
+footer .container {
+    display: flex;
+    flex-flow: wrap row;
+    padding: 60px 0;
+    justify-content: space-between;
+}
+
+footer .box {
+    max-width: 25%;
+}
+
+footer .box .title {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+footer .box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .box ul li {
+    padding-left: 5px;
+}
+
+/* Last Box */
+footer .box .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 5px;
+}
+
+footer .box .social-icons ion-icon {
+    width: 30px;
+    height: 30px;
+    transition: var(--main-transition);
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+footer .box .social-icons ion-icon:hover {
+    color: var(--main-clr);
+}
+
+footer .box .subscribe p {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+footer .box .subscribe input {
+    padding: 8px 12px;
+    outline: none;
+    transition: var(--main-transition);
+    margin-bottom: 10px;
+}
+
+footer .box .subscribe input:focus {
+    border: 2px solid var(--main-clr);
+}
+
+footer .box .subscribe button {
+    padding: 5px 15px;
+}
+
+/* End Footer */
+
+/* Start Copyrights */
+.copy {
+    position: relative;
+    background-color: var(--bg-clr);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.copy span {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-weight: bold;
+    font-size: .6em;
+    color: var(--main-clr);
+}

@@ -1,0 +1,91 @@
+/* Start Global Components */
+
+
+section {
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+
+.container {
+    padding: 0 30px;
+    margin: 0 auto;
+    width: calc(100% - 250px);
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 22px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--bg-clr);
+    outline: none;
+    transition: var(--main-transition);
+}
+
+.main-btn {
+    background-color: var(--main-clr);
+    border: 1px solid var(--main-clr);
+}
+
+.main-btn:hover {
+    background-color: var(--bg-clr);
+    color: var(--main-clr);
+    box-shadow: inset 0 0 10px #fc5d3563;
+}
+
+.sec-btn {
+    background-color: var(--secondary-clr);
+    border: 1px solid var(--secondary-clr);
+}
+
+.sec-btn:hover {
+    background-color: var(--bg-clr);
+    color: var(--secondary-clr);
+    box-shadow: inset 0 0 10px #0000001f;
+}
+
+/* Slider Icons */
+.previous,
+.next {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-clr);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.previous:hover,
+.next:hover {
+    background-color: var(--main-clr);
+}
+
+.previous ion-icon,
+.next ion-icon {
+    color: var(--bg-clr);
+    font-weight: 900;
+}
+
+/* Main Section Heading */
+.section-heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 2.2rem;
+    text-transform: capitalize;
+}
